@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="V1e-r4-fgX">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="FindMyFriends" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="06j-hE-TlG">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="L5e-IR-tSe" appends="YES" id="uZ9-2i-1Nw"/>
+                                </connections>
+                            </mapView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CGd-zH-DBb">
+                                <rect key="frame" x="0.0" y="440" width="375" height="227"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ybm-Zg-p5B">
+                                        <rect key="frame" x="26" y="21" width="322.5" height="184"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="YEh-T9-z7S">
+                                                <rect key="frame" x="0.0" y="0.0" width="322.5" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="讓朋友取得我現在位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SJQ-UK-bq0">
+                                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iPX-4J-Mjz">
+                                                        <rect key="frame" x="273.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="updateUserLocationSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="pmX-Sx-2ds"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="KID-7M-mUX">
+                                                <rect key="frame" x="0.0" y="51" width="322.5" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="自動更新朋友位置" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gsI-EJ-Z3H">
+                                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kOm-fT-sU9">
+                                                        <rect key="frame" x="273.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="downloadFriendsLocationSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="n4A-Hf-0B0"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="VJX-VS-h67">
+                                                <rect key="frame" x="0.0" y="102" width="322.5" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的即時移動軌跡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nca-kF-LdY">
+                                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Sk7-qO-HYI">
+                                                        <rect key="frame" x="273.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="drawUserLoactionLIneSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="j8c-vW-nU9"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="100" translatesAutoresizingMaskIntoConstraints="NO" id="l6B-vY-zW0">
+                                                <rect key="frame" x="0.0" y="153" width="322.5" height="31"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="我的歷史移動軌跡" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kze-1Q-m0W">
+                                                        <rect key="frame" x="0.0" y="0.0" width="173.5" height="31"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="u8Z-4e-ziw">
+                                                        <rect key="frame" x="273.5" y="0.0" width="51" height="31"/>
+                                                        <connections>
+                                                            <action selector="drawUserHistroyLocationLineSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="wfb-jo-WNe"/>
+                                                            <action selector="drawUserLoactionLIneSwitchPressed:" destination="BYZ-38-t0r" eventType="valueChanged" id="Wxn-QK-GkB"/>
+                                                        </connections>
+                                                    </switch>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="184" id="4ab-p9-Adu"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="ybm-Zg-p5B" secondAttribute="trailing" constant="26.5" id="3UB-he-YSh"/>
+                                    <constraint firstAttribute="height" constant="227" id="ZDk-b0-mHU"/>
+                                    <constraint firstItem="ybm-Zg-p5B" firstAttribute="leading" secondItem="CGd-zH-DBb" secondAttribute="leading" constant="26" id="is5-fd-GCK"/>
+                                    <constraint firstAttribute="bottom" secondItem="ybm-Zg-p5B" secondAttribute="bottom" constant="22" id="sZI-ss-PDq"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="CGd-zH-DBb" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="9Uh-ew-OjD"/>
+                            <constraint firstItem="06j-hE-TlG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="DKe-rF-nYO"/>
+                            <constraint firstItem="06j-hE-TlG" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="Gmy-Pi-uzq"/>
+                            <constraint firstItem="CGd-zH-DBb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Tzn-6C-eIM"/>
+                            <constraint firstItem="06j-hE-TlG" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="XWj-kL-Dgm"/>
+                            <constraint firstItem="06j-hE-TlG" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="hwB-gd-cGd"/>
+                            <constraint firstItem="CGd-zH-DBb" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="xE0-1s-HJa"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="pXT-MU-CZq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="QP5-IG-VuE">
+                            <connections>
+                                <action selector="editBtnPressed:" destination="BYZ-38-t0r" id="pfn-PX-vat"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="Wzp-K6-R8i">
+                            <connections>
+                                <action selector="refreshBtnPressed:" destination="BYZ-38-t0r" id="BZs-XA-Rdy"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="downloadFriendsSwitchView" destination="kOm-fT-sU9" id="dWy-jL-aXn"/>
+                        <outlet property="drawUserHistroyLocationLineSwitchView" destination="u8Z-4e-ziw" id="qsC-xZ-guh"/>
+                        <outlet property="drawUserLocationLineSwitchView" destination="Sk7-qO-HYI" id="wMq-h6-XAt"/>
+                        <outlet property="editBtnView" destination="QP5-IG-VuE" id="phQ-J1-FLl"/>
+                        <outlet property="editPageView" destination="CGd-zH-DBb" id="vZH-P0-lvm"/>
+                        <outlet property="mainMapView" destination="06j-hE-TlG" id="XYi-Go-IJq"/>
+                        <outlet property="refreshBtnView" destination="Wzp-K6-R8i" id="dMg-hb-Wy2"/>
+                        <outlet property="tapMapCancelEditView" destination="L5e-IR-tSe" id="ShJ-3w-yFg"/>
+                        <outlet property="updateUserLocationSwitchView" destination="iPX-4J-Mjz" id="bt6-yf-S5m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="L5e-IR-tSe">
+                    <connections>
+                        <action selector="tapMapCancelEdit:" destination="BYZ-38-t0r" id="jkp-6T-6eU"/>
+                    </connections>
+                </tapGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="879.20000000000005" y="132.68365817091455"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="oN5-Rh-aQQ">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="V1e-r4-fgX" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="888-Fk-QN2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="fmw-yp-P3G"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X3B-br-SK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="132" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
