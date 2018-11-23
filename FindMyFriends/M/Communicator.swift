@@ -10,8 +10,8 @@ import Foundation
 import Alamofire
 
 
-let GROUPNAME = "cp102"
-let MY_NAME = "Josh"
+let GROUPNAME = "xxxxx"
+let MY_NAME = "xxxxx"
 
 
 // JSON Keys
@@ -30,7 +30,7 @@ typealias DoneHandler = (_ result: [String: Any]?, _ error: Error?) -> Void
 
 class Communicator {
     
-    static let BASEURL = "http://class.softarts.cc/FindMyFriends/"
+    static let BASEURL = "http://xxxxx/xxxx/xxxxx/"
     let UPDATE_USERLOCATION_URL = BASEURL + "updateUserLocation.php?"
     let QUERY_FRIENDLOCATIONS_URL = BASEURL + "queryFriendLocations.php?"
     
