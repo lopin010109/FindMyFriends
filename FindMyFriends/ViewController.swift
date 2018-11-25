@@ -144,6 +144,10 @@ class ViewController: UIViewController, UIGestureRecognizerDelegate {
             for friends in incomingFriends {
                 // save all friends data in SQLite
                 self.logManager.append(friends)
+                // filter self location
+                guard friends.friendName != "Josh" else {
+                    continue
+                }
                 // set annotations show my friends loaction
                 let annotation = StoreAnnotation() //MKPointAnnotation()
                 let showCoordinate =
